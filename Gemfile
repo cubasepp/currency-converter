@@ -14,7 +14,8 @@ gem 'puma', '~> 4.1'
 
 gem 'money-currencylayer-bank'
 gem 'money-rails', '~>1.12'
-gem 'google_currency', require: 'money/bank/google_currency'
+# Workaround Gem
+# gem 'google_currency', require: 'money/bank/google_currency'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

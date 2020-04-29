@@ -1,8 +1,8 @@
 development:
-  api_key: ''
+  api_key: '1799137a06ba2a3181924506b6c3f2ba'
 
 test:
-  api_key: ''
+  api_key: '1799137a06ba2a3181924506b6c3f2ba'
 
 production:
   api_key: ''
