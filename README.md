@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- run rake db:migrate
+- run rake db:Seed
+- rails server
 
-Things you may want to cover:
+go to http://localhost:3000/
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Important
+- whenever does execute every day at 8 PM a rake task:
+  - rake 'money_currencylayer_bank_importer:perform'
+- Update the API key in `config/currency_layer_bank.yml`
