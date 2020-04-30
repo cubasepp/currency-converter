@@ -4,7 +4,6 @@
 - run rake db:Seed
 - rails server
 
-go to http://localhost:3000/
 
 Important
 - whenever does execute every day at 8 PM a rake task:
