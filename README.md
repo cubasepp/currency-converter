@@ -10,3 +10,10 @@ Important
 - whenever does execute every day at 8 PM a rake task:
   - rake 'money_currencylayer_bank_importer:perform'
 - Update the API key in `config/currency_layer_bank.yml`
+
+
+To test run:
+```
+curl --request GET \
+  --url 'http://localhost:3000/convert?amount=2.50&from_currency=EUR&to_currency=USD'
+```
