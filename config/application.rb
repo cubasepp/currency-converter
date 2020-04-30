@@ -36,6 +36,6 @@ module CurrencyConverter
 
     config.x.default_currency = 'EUR'
     config.x.allowed_currencies = %W(USD CHF)
-    config.x.all_currencies = config.x.allowed_currencies << config.x.default_currency
+    config.x.all_currencies = [*config.x.allowed_currencies, config.x.default_currency]
   end
 end

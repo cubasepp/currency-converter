@@ -1,4 +1,4 @@
-class RatesController < ApplicationController
+class ConvertController < ApplicationController
   before_action :validate_params, only: [:index]
 
   # GET /rates
