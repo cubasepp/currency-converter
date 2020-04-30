@@ -1,4 +1,4 @@
-class MoneyCurrencylayerBankImporter
+class ExchangeRateImporter
   def self.perform
     today = Date.today
     exchange_rates = []

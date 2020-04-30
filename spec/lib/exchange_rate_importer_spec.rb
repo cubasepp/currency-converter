@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe MoneyCurrencylayerBankImporter do
+RSpec.describe ExchangeRateImporter do
 
   describe 'perform' do
     it 'Should create two entries' do
