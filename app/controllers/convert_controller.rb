@@ -4,7 +4,7 @@ class ConvertController < ApplicationController
   # GET /rates
   def index
     @converted_amount = Money.new(params[:amount].to_f, params[:from_currency]).exchange_to(params[:to_currency]).to_f
-    @rates = Rate.find_all_by_from_currecny(params[:from_currency], params[:to_currency]).take(7)
+    @exchange_rates = ExchangeRate.find_all_by_from_currecny(params[:from_currency], params[:to_currency]).take(7)
   end
 
   private

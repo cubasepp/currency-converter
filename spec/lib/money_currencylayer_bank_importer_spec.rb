@@ -8,7 +8,7 @@ RSpec.describe MoneyCurrencylayerBankImporter do
 
       expect {
         described_class.perform
-      }.to change(Rate, :count).by(4)
+      }.to change(ExchangeRate, :count).by(4)
     end
   end
 end

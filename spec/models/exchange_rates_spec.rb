@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Rate, type: :model do
+RSpec.describe ExchangeRate, type: :model do
   describe 'validations' do
       it { should validate_presence_of(:date) }
       it { should validate_presence_of(:rate) }

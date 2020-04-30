@@ -3,7 +3,7 @@ require 'rails_helper'
 #
 RSpec.describe "/convert", type: :request do
   let!(:rates) {
-    FactoryBot.create_list(:rate, 10) do |r, i|
+    FactoryBot.create_list(:exchange_rate, 10) do |r, i|
       r.date = i.days.ago
     end
   }
@@ -15,7 +15,7 @@ RSpec.describe "/convert", type: :request do
       get convert_url, params: { amount: '1.0', from_currency: 'EUR', to_currency: 'USD', format: :json}
 
       expect(response).to be_successful
-      expect(response.body).to eq('{"converted_amount":0.02,"rates":[{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289}]}')
+      expect(response.body).to eq('{"converted_amount":0.02,"exchange_rates":[{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289},{"date":"2020-04-29","rate":1.085193082979289}]}')
     end
 
     it "renders a successful response without rates" do
@@ -24,7 +24,7 @@ RSpec.describe "/convert", type: :request do
       get convert_url, params: { amount: '1.0', from_currency: 'EUR', to_currency: 'CHF', format: :json}
 
       expect(response).to be_successful
-      expect(response.body).to eq('{"converted_amount":0.02,"rates":[]}')
+      expect(response.body).to eq('{"converted_amount":0.02,"exchange_rates":[]}')
     end
 
     it "renders a bad request" do
