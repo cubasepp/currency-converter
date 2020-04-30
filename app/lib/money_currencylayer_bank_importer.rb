@@ -2,9 +2,9 @@ class MoneyCurrencylayerBankImporter
   def self.perform
     today = Date.today
     rates = []
-    source_currency = 'EUR'
+    source_currency = Rails.configuration.x.default_currency
 
-    %W( USD CHF ).each do |currency|
+    Rails.configuration.x.allowed_currencies.each do |currency|
       rates << { date: today, rate: Money.default_bank.get_rate(source_currency, currency), from_currency: source_currency, to_currency: currency }
       # Store reverse currecny exchange rate  required by task
       rates << { date: today, rate: Money.default_bank.get_rate(currency, source_currency), from_currency: currency, to_currency: source_currency }

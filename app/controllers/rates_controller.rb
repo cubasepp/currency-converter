@@ -10,7 +10,7 @@ class RatesController < ApplicationController
   private
 
     def validate_params
-      rquired_currencies = %w(USD CHF EUR)
+      rquired_currencies = Rails.configuration.x.all_currencies
 
       unless params[:amount].present? and
         params[:from_currency].present? and

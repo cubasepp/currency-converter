@@ -33,5 +33,9 @@ module CurrencyConverter
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.x.default_currency = 'EUR'
+    config.x.allowed_currencies = %W(USD CHF)
+    config.x.all_currencies = config.x.allowed_currencies << config.x.default_currency
   end
 end
