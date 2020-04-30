@@ -8,4 +8,5 @@ MoneyRails.configure do |config|
   mclb.cache = Rails.root.join('storage/currencylayer_cache')
   mclb.update_rates
   config.default_bank = mclb
+  config.rounding_mode = BigDecimal::ROUND_HALF_EVEN
 end
