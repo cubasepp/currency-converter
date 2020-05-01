@@ -2,7 +2,7 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 exchange_rates = []
-Rails.configuration.x.default_currency = 'EUR'
+source_currency = Rails.configuration.x.default_currency 
 (1.week.ago.to_date..DateTime.now.to_date).each do |today|
   Rails.configuration.x.allowed_currencies.each do |currency|
     exchange_rates << { date: today, rate: rand(1.080..1.099), from_currency: source_currency, to_currency: currency }
