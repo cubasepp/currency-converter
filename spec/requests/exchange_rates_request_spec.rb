@@ -12,7 +12,8 @@ RSpec.describe "ExchangeRates", type: :request do
     it "returns http success with data found" do
 
       headers = { "ACCEPT" => "application/json" }
-      get "/exchange_rates", headers: headers
+      get exchange_rates_url, headers: headers
+
       expect(response).to have_http_status(:success)
       expect(response.body).to eq('{"EURUSD":[{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"},{"rate":1.085193082979289,"date":"2020-04-29"}]}')
     end
@@ -20,7 +21,8 @@ RSpec.describe "ExchangeRates", type: :request do
     it "returns http success without data" do
       headers = { "ACCEPT" => "application/json" }
       Timecop.travel(2.weeks.from_now) do
-        get "/exchange_rates", headers: headers
+        get exchange_rates_url, headers: headers
+
         expect(response).to have_http_status(:success)
         expect(response.body).to eq('{}')
       end
