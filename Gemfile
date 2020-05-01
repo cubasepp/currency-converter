@@ -33,6 +33,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'sqlite3', require: false
+  gem 'timecop'
 end
 
 group :development do

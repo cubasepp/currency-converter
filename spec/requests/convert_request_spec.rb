@@ -2,7 +2,7 @@ require 'rails_helper'
 
 #
 RSpec.describe "/convert", type: :request do
-  let!(:rates) {
+  let!(:exchange_rate) {
     FactoryBot.create_list(:exchange_rate, 10) do |r, i|
       r.date = i.days.ago
     end
