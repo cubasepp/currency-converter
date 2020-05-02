@@ -4,19 +4,19 @@ class ConvertController < ApplicationController
   # GET /rates
   def index
     @converted_amount = Money.new(params[:amount].to_f, params[:from_currency]).exchange_to(params[:to_currency]).to_f
-    @exchange_rates = ExchangeRate.find_all_by_from_currecny(params[:from_currency], params[:to_currency]).take(7)
+    @exchange_rates = ExchangeRate.find_all_by_from_to_currency(params[:from_currency], params[:to_currency]).take(7)
   end
 
   private
 
     def validate_params
-      rquired_currencies = Rails.configuration.x.all_currencies
+      required_currencies = Rails.configuration.x.all_currencies
 
       unless params[:amount].present? and
         params[:from_currency].present? and
         params[:to_currency].present? and
-        params_include?(:from_currency, rquired_currencies) and
-        params_include?(:to_currency, rquired_currencies)
+        params_include?(:from_currency, required_currencies) and
+        params_include?(:to_currency, required_currencies)
           return render json: {status: "error", code: 400, message: 'invalid paramters'}, status: 400
       end
     end
