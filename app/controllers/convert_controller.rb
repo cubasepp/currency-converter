@@ -17,6 +17,6 @@ class ConvertController < ApplicationController
     end
 
     def allowed_currencies?(key)
-      not params.key?(key) or Rails.configuration.x.all_currencies.include?(params[key])
+      params[key].present? and Rails.configuration.x.all_currencies.include?(params[key])
     end
 end
