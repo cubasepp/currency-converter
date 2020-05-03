@@ -1,1 +1,2 @@
-json.merge! @exchange_rates
+json.labels @labels
+json.data @exchange_rates

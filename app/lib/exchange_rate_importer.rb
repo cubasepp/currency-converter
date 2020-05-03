@@ -6,7 +6,7 @@ class ExchangeRateImporter
 
     Rails.configuration.x.allowed_currencies.each do |currency|
       exchange_rates << { date: today, rate: Money.default_bank.get_rate(source_currency, currency), from_currency: source_currency, to_currency: currency }
-      # Store reverse currecny exchange rate  required by task
+      # Store reverse exchange rate required by task
       exchange_rates << { date: today, rate: Money.default_bank.get_rate(currency, source_currency), from_currency: currency, to_currency: source_currency }
     end
 

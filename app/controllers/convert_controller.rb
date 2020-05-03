@@ -1,7 +1,6 @@
 class ConvertController < ApplicationController
   before_action :validate_params, only: [:index]
 
-  # GET /rates
   def index
     @converted_amount = Money.new(params[:amount].to_f, params[:from_currency]).exchange_to(params[:to_currency]).to_f
     @exchange_rates = ExchangeRate.find_all_by_from_to_currency(params[:from_currency], params[:to_currency]).take(7)
