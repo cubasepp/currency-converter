@@ -50,25 +50,25 @@ RSpec.describe "/convert", type: :request do
       expect(response.status).to eq 400
     end
 
-    it "renders a bad request - from curreny missing" do
+    it "renders a bad request - from currency missing" do
       get convert_url, params: { amount: '100', from_currency: 'EUR', format: :json}
 
       expect(response.status).to eq 400
     end
 
-    it "renders a bad request - from curreny invalid" do
+    it "renders a bad request - from currency invalid" do
       get convert_url, params: { amount: '100', from_currency: 'SEK', format: :json}
 
       expect(response.status).to eq 400
     end
 
-    it "renders a bad request - to curreny missing" do
+    it "renders a bad request - to currency missing" do
       get convert_url, params: { amount: '100', to_currency: 'EUR',  format: :json}
 
       expect(response.status).to eq 400
     end
 
-    it "renders a bad request - to curreny invalid" do
+    it "renders a bad request - to currency invalid" do
       get convert_url, params: { amount: '100', to_currency: 'SEK', format: :json}
 
       expect(response.status).to eq 400
