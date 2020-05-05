@@ -14,7 +14,7 @@ Important
 To test run:
 ```
 curl --request GET \
-  --url 'http://localhost:3000/api/convert?amount=250&from_currency=EUR&to_currency=USD' \
+  --url 'http://localhost:3000/api/convert?cents=2500&from_currency=EUR&to_currency=USD' \
   --header 'content-type: application/json'
 ```
 ```
