@@ -8,9 +8,9 @@ gem 'rails', '~> 6.0.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0', require: false
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 5.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.10'
 
 gem 'money-currencylayer-bank'
 gem 'money-rails', '~>1.12'
@@ -29,7 +29,7 @@ gem 'whenever', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 4.0.1'
+  gem 'rspec-rails', '~> 4.0.2'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'sqlite3', require: false
