@@ -13,7 +13,7 @@ gem 'puma', '~> 5.1'
 gem 'jbuilder', '~> 2.10'
 
 gem 'money-currencylayer-bank'
-gem 'money-rails', '~>1.12'
+gem 'money-rails', '~>1.13'
 # Workaround Gem
 # gem 'google_currency', require: 'money/bank/google_currency'
 
