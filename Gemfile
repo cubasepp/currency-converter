@@ -8,9 +8,9 @@ gem 'rails', '~> 6.0.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0', require: false
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 5.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.10'
 
 gem 'money-currencylayer-bank'
 gem 'money-rails', '~>1.12'
